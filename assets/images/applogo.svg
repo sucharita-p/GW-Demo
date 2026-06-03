@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+<circle cx="60" cy="60" r="50"
+fill="none"
+stroke="#b47c58"
+stroke-width="10"/>
+<text x="40" y="80"
+font-size="60"
+font-family="Arial"
+fill="#b47c58">G</text>
+</svg>

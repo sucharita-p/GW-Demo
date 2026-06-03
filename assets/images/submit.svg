@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+<circle cx="24" cy="24" r="20" fill="white"/>
+<path d="M15 25 L22 32 L35 15"
+stroke="green"
+stroke-width="4"
+fill="none"/>
+</svg>

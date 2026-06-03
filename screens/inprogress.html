@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+
+<div class="container">
+    <!-- Scanner -->
+    <div class="scanner-panel">
+        <img src="../assets/images/inprogress.gif" id="inprogress" />
+    </div>
+
+    <!-- InProgress Panel -->
+    <div class="inprogress-panel">
+        <h1>IN PROGRESS</h1>
+        <div id="message"></div>
+    </div>
+</div>
+<script src="../assets/js/app.js"></script>
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            loadScreen("waitforclerk");
+        }, 3000); // 3000ms = 3 seconds
+    };
+</script>

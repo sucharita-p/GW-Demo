@@ -1,0 +1,182 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#efefef;
+height:100vh;
+overflow:hidden;
+}
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 20px;
+background:white;
+}
+
+.logo img{
+width:80px;
+}
+
+.banner img{
+ width:1200px;
+height:70px;
+}
+
+.company{
+font-size:32px;
+font-weight:bold;
+}
+
+h1{
+text-align:center;
+color:#1d56c6;
+font-size:52px;
+margin:20px;
+}
+
+.container{
+display:flex;
+height:70vh;
+}
+
+.scanner-panel{
+    width:25%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+
+.scanner-panel img{
+    width:260px;
+    cursor:pointer;
+}
+
+.scanner-timer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.timer-box{
+    background:#efefef;;
+    color:green;
+    padding:15px 35px;
+    border-radius:12px;
+    font-size:40px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.input-panel{
+width:75%;
+padding:10px;
+}
+
+.input-row{
+display:flex;
+gap:10px;
+margin-bottom:15px;
+}
+
+input{
+flex:1;
+height:90px;
+font-size:40px;
+padding-left:20px;
+}
+
+.submit{
+width:340px;
+background:#329352;
+color:white;
+font-size:40px;
+border:none;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+cursor:pointer;
+}
+
+.submit img{
+width:40px;
+}
+
+.keypad{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+}
+
+.keypad button{
+height:110px;
+font-size:50px;
+font-weight:bold;
+cursor:pointer;
+background:white;
+border:2px solid #5168ff;
+}
+
+.back{
+background:#c95f5f !important;
+}
+
+.clear{
+background:#0817b7 !important;
+color:white;
+}
+
+.back img,
+.clear img{
+width:35px;
+}
+
+#message{
+margin-top:20px;
+font-size:32px;
+text-align:center;
+font-weight:bold;
+}
+
+.timer{
+position:absolute;
+right:20px;
+top:10px;
+background:#222;
+color:white;
+padding:10px 20px;
+border-radius:10px;
+font-size:24px;
+}
+
+footer{
+position:absolute;
+bottom:0;
+width:100%;
+padding:15px;
+background:#d8f0f0;
+text-align:center;
+font-size:24px;
+color:red;
+font-style:italic;
+}
+
+.inprogress-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 240px;   /* controls how high it sits */
+    padding-left: 320px;   /* controls how high it sits */
+    height: 100vh;
+    width: 100%;
+    font-size: 48px;
+}

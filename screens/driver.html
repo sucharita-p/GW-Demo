@@ -1,0 +1,80 @@
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
+<h1>SCAN OR ENTER DRIVER ID</h1>
+
+<div class="container">
+
+    <!-- Scanner -->
+    <div class="scanner-panel">
+        <img src="../assets/images/dlscanner.gif" id="scanner" />
+
+        <div class="scanner-timer">
+            <div class="timer-box">
+                <span id="countdown">00:30</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Panel -->
+    <div class="input-panel">
+
+        <div class="input-row">
+            <input id="inputdata" readonly placeholder="Enter Driver ID">
+
+            <button class="submit" onclick="submitDriver()">
+                <img src="../assets/images/submit.svg">
+                SUBMIT
+            </button>
+        </div>
+
+        <!-- POPUP -->
+        <div id="exceptionPopup" class="popup-overlay">
+            <div class="popup-box">
+
+                <h1 class="popup-title">
+                    PLEASE SCAN OR<br>
+                    ENTER A VALID DRIVER ID<br>
+                </h1>
+
+                <button onclick="closePopup()" class="ok-btn">
+                    OK
+                </button>
+
+            </div>
+        </div>
+
+        <!-- KEYPAD -->
+        <div class="keypad">
+            <button onclick="addDigit('1')">1</button>
+            <button onclick="addDigit('2')">2</button>
+            <button onclick="addDigit('3')">3</button>
+
+            <button onclick="addDigit('4')">4</button>
+            <button onclick="addDigit('5')">5</button>
+            <button onclick="addDigit('6')">6</button>
+
+            <button onclick="addDigit('7')">7</button>
+            <button onclick="addDigit('8')">8</button>
+            <button onclick="addDigit('9')">9</button>
+
+            <button class="back" onclick="backspace()">
+                <img src="../assets/images/back.svg">
+            </button>
+
+            <button onclick="addDigit('0')">0</button>
+
+            <button class="clear" onclick="clearInput()">
+                <img src="../assets/images/clear.svg">
+                CLEAR
+            </button>
+        </div>
+
+        <div id="message"></div>
+
+    </div>
+</div>
+<script src="../assets/js/timer.js"></script>
+<script src="../assets/js/scanner.js"></script>
+<script src="../assets/js/app.js"></script>
