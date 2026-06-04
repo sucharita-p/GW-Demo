@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/clerk.css">
+    <title>Queue Screen</title>
+</head>
+<body>
+
+<div class="queue-container">
+  
+  <div class="top-bar">
+    <div class="apm-logo">
+      <img 
+        src="../assets/images/apmlogo.png"
+        alt="APM Terminals"
+      >
+    </div>
+
+    <div class="menu">
+      <span>About</span>
+      <span>Settings</span>
+      <span>Search</span>
+      <span>Action</span>
+    </div>
+
+    <div class="header-actions">
+      <div class="user-info">
+        Clerk: <b>Superclerk</b> &nbsp;&nbsp; Role: <b>Lane Clerk</b>
+      </div>
+      <button class="close-icon">✕</button>
+    </div>
+  </div>
+
+  <div class="queue-body">
+    <div class="table-header">
+      Transaction(s) waiting for clerk : 1
+    </div>
+
+    <div class="table-container">
+      <table class="gos-table">
+
+<tr>
+<th>Lane Name</th>
+<th>Truck LP</th>
+<th>Gate Pass</th>
+<th>GOS TV Key</th>
+<th>Container 1</th>
+<th>Container 2</th>
+<th>Weight</th>
+<th>Start Time</th>
+<th>Total Duration</th>
+<th>Clerk Name</th>
+<th>Manual Duration</th>
+<th>Reason</th>
+<th>Status</th>
+</tr>
+
+<tr class="highlight clickable" ondblclick="openQueueDetail()" title="Double click to open details">
+<td>In-01</td>
+<td>B7B6B6</td>
+<td>00002113</td>
+<td>25226030600002113</td>
+<td>MSMU7441730</td>
+<td></td>
+<td>34000</td>
+<td>03/06/26 4:53 PM</td>
+<td>00:00:06</td>
+<td></td>
+<td></td>
+<td style="color:#d48f00;font-weight:bold;">OCR Container</td>
+<td style="color:#e53935;font-weight:bold;">Waiting For Clerk</td>
+</tr>
+
+<tr>
+<td>In-02</td><td></td><td></td><td></td>
+<td></td><td></td><td></td>
+<td></td><td></td><td></td>
+<td></td><td></td><td></td>
+</tr>
+
+<tr>
+<td>Out-01</td><td></td><td></td><td></td>
+<td></td><td></td><td></td>
+<td></td><td></td><td></td>
+<td></td><td></td><td></td>
+</tr>
+
+</table>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="bottom-bar">
+    <button class="next-btn">NEXT<br>(Enter)</button>
+  </div>
+
+  <button class="close-btn">CLOSE<br>(F10)</button>
+
+  <!-- FOOTER -->
+  <div class="footer-final">
+
+    <div class="footer-left">
+      Copyright © Maersk, Inc.
+    </div>
+
+    <div class="footer-center">
+      Login Time: 06/03/2026 04:48:46
+    </div>
+
+    <div class="footer-right">
+      Last Refresh Time: 16:54:02
+      <img src="../assets/images/apmlogo.png" height="20" alt="APM Logo">
+    </div>
+
+  </div>
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
