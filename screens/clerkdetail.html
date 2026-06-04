@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/clerk.css"
-    <title>Clerk Detail</title>
+    <link rel="stylesheet" href="../assets/css/clerk.css">
 </head>
 <body>
 
 <div class="queue-detail-container">
 
     <!-- HEADER -->
-<div class="top-bar">
-  <div class="top-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/APM_Terminals_logo.svg">
-    <div class="top-menu">
-      <span>About</span>
-      <span>Settings</span>
+    <div class="top-bar">
+      <div class="apm-logo">
+        <img 
+          src="../assets/images/apmlogo.png"
+          alt="APM Terminals"
+        >
+      </div>
+  
+      <div class="menu">
+        <span>About</span>
+        <span>Settings</span>
+        <span>Action</span>
+      </div>
+  
+      <div class="header-actions">
+        <div class="user-info">
+          Clerk: <b>Superclerk</b> &nbsp;&nbsp; Role: <b>Lane Clerk</b>
+        </div>
+        <button class="close-icon">✕</button>
+      </div>
     </div>
-  </div>
-
-  <div class="top-right">
-    Clerk: Ozzy &nbsp;&nbsp; Role: Lane Clerk
-  </div>
-</div>
 
 <!-- LANE -->
 <div class="lane-bar">
@@ -64,16 +71,15 @@
 
     <label>Seal Presence:</label><input type="checkbox" checked>
   </div>
-
+<div class="btn-error-panel">
+  <span class="">
+    <button>Cancel Move (F12)</button>
+  </span>
   <div class="error-box">
     Move Errors:<br><br>
     - Container MSMU7441730 has ISO Code 45G0 mismatch
   </div>
-
-  <div class="left-actions">
-    <button>Back (F6)</button>
-    <button>Cancel Move (F12)</button>
-  </div>
+</div>
 
 </div>
 
@@ -81,14 +87,14 @@
 <div class="right-panel">
 
   <div class="viewer">
-    <img src="https://images.unsplash.com/photo-1595433707802-0a3d4f8b0b91">
+    <img src="../assets/images/RearView.jpg">
   </div>
 
   <div class="side-panel">
-    <div class="thumb"><img src="https://images.unsplash.com/photo-1595433707802-0a3d4f8b0b91"><span>Back</span></div>
-    <div class="thumb"><img src="https://images.unsplash.com/photo-1595433707802-0a3d4f8b0b91"><span>Left</span></div>
-    <div class="thumb"><img src="https://images.unsplash.com/photo-1595433707802-0a3d4f8b0b91"><span>Truck LP</span></div>
-    <div class="thumb"><img src="https://images.unsplash.com/photo-1595433707802-0a3d4f8b0b91"><span>Trailer LP</span></div>
+    <div class="thumb"><img src="../assets/images/RearView.jpg"><span>Back</span></div>
+    <div class="thumb"><img src="../assets/images/LeftView.jpg"><span>Left</span></div>
+    <div class="thumb"><img src="../assets/images/RighView.jpg"><span>Truck LP</span></div>
+    <div class="thumb"><img src="../assets/images/FrontView.jpg"><span>Trailer LP</span></div>
   </div>
 
 </div>
@@ -102,6 +108,7 @@
 
 <!-- ACTIONS -->
 <div class="bottom-bar">
+  <button>Back (F6)</button>
   <button>Submit (F1)</button>
   <button>Cancel Visit (F2)</button>
   <button>Open Barrier (F4)</button>

@@ -69,7 +69,7 @@ function submitDriver() {
     console.log("Driver Submitted:", value);
 }
 
-function openQueueDetail() {
+function openClerkDetail() {
     loadClerkScreen("clerkdetail");
     console.log("Queue detail opened");
 }

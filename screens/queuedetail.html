@@ -57,7 +57,7 @@
 <th>Status</th>
 </tr>
 
-<tr class="highlight clickable" ondblclick="openQueueDetail()" title="Double click to open details">
+<tr class="clickable" ondblclick="openClerkDetail()" title="Double click to open details">
 <td>In-01</td>
 <td>B7B6B6</td>
 <td>00002113</td>
@@ -93,25 +93,27 @@
 
   <!-- BUTTONS -->
   <div class="bottom-bar">
-    <button class="next-btn">NEXT<br>(Enter)</button>
+    <button class="next-btn" onclick="openClerkDetail()">NEXT (Enter)</button>
   </div>
 
-  <button class="close-btn">CLOSE<br>(F10)</button>
+  <button class="close-btn">CLOSE (F10)</button>
 
   <!-- FOOTER -->
   <div class="footer-final">
 
     <div class="footer-left">
-      Copyright © Maersk, Inc.
+      <img src="../assets/images/ClerkIcon.ico" height="40" alt="Terminal Logo">
+      <span>Copyright © Maersk, Inc.</span>
+      <span>Login Time: 06/04/2026 04:48:46</span>
     </div>
 
     <div class="footer-center">
-      Login Time: 06/03/2026 04:48:46
+
     </div>
 
     <div class="footer-right">
       Last Refresh Time: 16:54:02
-      <img src="../assets/images/apmlogo.png" height="20" alt="APM Logo">
+      <img src="../assets/images/apmlogo.png" height="40" alt="APM Logo">
     </div>
 
   </div>
