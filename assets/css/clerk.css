@@ -940,13 +940,15 @@ select {
 /* ===== BOTTOM ACTION BAR ===== */
 .bottom-bar {
   position: fixed;
-  bottom: 0;
+  bottom: 7vh;
   width: 35%;
   height: 45px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  margin-left: 2vh;
 }
 
 .btn-error-panel button,
