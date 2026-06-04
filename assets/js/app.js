@@ -33,6 +33,15 @@ function loadScreen(screenName) {
     console.log("Loading:", frame.src);
 }
 
+function loadClerkScreen(screenName) {
+    const url =  screenName + ".html";
+
+    console.log("Redirecting to:", url);
+
+    // Navigate in the current window
+    window.location.href = url;
+}
+
 function closePopup() {
     document.getElementById("exceptionPopup").style.display = "none";
 }
@@ -45,7 +54,7 @@ function submitTVA() {
         return;
     }
 
-    loadScreen("driver");
+    loadClerkScreen("driver");
     console.log("Submitted:", value);
 }
 
@@ -56,6 +65,11 @@ function submitDriver() {
         document.getElementById("exceptionPopup").style.display = "flex";
         return;
     }
-    loadScreen("inprogress");
+    loadClerkScreen("inprogress");
     console.log("Driver Submitted:", value);
+}
+
+function openQueueDetail() {
+    loadClerkScreen("clerkdetail");
+    console.log("Queue detail opened");
 }
