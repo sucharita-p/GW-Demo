@@ -833,20 +833,26 @@ select {
 /* MODE BOXES */
 .mode-row {
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
   margin:18px 0;
 }
 
 .mode-box {
-  width:160px;
-  text-align:center;
-  padding:12px;
-  border-radius:10px;
-  border:3px solid #ccc;
+  height: 6vh;
+  display: flex;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid #ccc;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mode-box.red { border-color:red; }
 .mode-box.green { border-color:#4caf50; }
+
+.mode-box img {
+  height: 4vh;
+}
 
 /* SECTION HEADER */
 .section-title {
@@ -861,7 +867,7 @@ select {
 .error-box {
   margin-top:15px;
   background:#dcdcdc;
-  padding:15px;
+  padding: 15px 15px 30px 14px;
   border-radius:10px;
   color:#d32f2f;
   font-weight:600;
