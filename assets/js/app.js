@@ -59,3 +59,8 @@ function submitDriver() {
     loadScreen("inprogress");
     console.log("Driver Submitted:", value);
 }
+
+function openQueueDetail() {
+    loadScreen("queue-detail");
+    console.log("Queue detail opened");
+}
