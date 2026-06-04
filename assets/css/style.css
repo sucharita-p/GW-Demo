@@ -2,7 +2,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:system-ui,sans-serif;
 }
 
 body{
@@ -117,13 +117,19 @@ grid-template-columns:repeat(3,1fr);
 gap:8px;
 }
 
+.with-letters{
+display:grid;
+grid-template-columns:repeat(10,1fr);
+gap:8px;
+}
+
 .keypad button{
 height:110px;
 font-size:50px;
 font-weight:bold;
 cursor:pointer;
 background:white;
-border:2px solid #5168ff;
+border: 2px solid #2437b2;
 }
 
 .back{
@@ -142,6 +148,9 @@ background:#c95f5f !important;
     align-items: center;
 }
 
+.btns-with-letters{
+    grid-column: span 2;
+}
 .back img,
 .clear img{
 width:35px;
