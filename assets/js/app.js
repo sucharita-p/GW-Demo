@@ -3,7 +3,11 @@ const msg = document.getElementById("message");
 
 function addDigit(n) {
     input.value += n;
-    resetTimer();
+
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.disabled = input.value.trim() === '';
+
+    //resetTimer();
 }
 
 function backspace() {
@@ -49,7 +53,7 @@ function closePopup() {
 function submitTVA() {
     let value = document.getElementById("inputdata").value.trim();
 
-    if (value === "") {
+    if (value.length <= 5) {
         document.getElementById("exceptionPopup").style.display = "flex";
         return;
     }
