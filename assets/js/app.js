@@ -73,3 +73,21 @@ function openClerkDetail() {
     loadClerkScreen("clerkdetail");
     console.log("Queue detail opened");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbs = document.querySelectorAll('.thumb');
+    const viewerImg = document.querySelector('.viewer img');
+    thumbs.forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        // Remove selection from all
+        thumbs.forEach(t => t.classList.remove('selected-thumb'));
+        // Add selection to clicked
+        thumb.classList.add('selected-thumb');
+        // Update viewer image
+        const img = thumb.querySelector('img');
+        if (img) viewerImg.src = img.src;
+      });
+    });
+    // Optionally, select the first thumb by default
+    if (thumbs[0]) thumbs[0].classList.add('selected-thumb');
+  });
