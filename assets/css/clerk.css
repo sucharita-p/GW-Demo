@@ -834,7 +834,7 @@ select {
   align-items: center;
 }
 
-.mode-box.red { border-color:red; }
+.mode-box.red { border: 5px solid red;}
 .mode-box.green { border-color:#4caf50; }
 
 .mode-box img {
