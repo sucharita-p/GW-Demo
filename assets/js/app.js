@@ -3,7 +3,11 @@ const msg = document.getElementById("message");
 
 function addDigit(n) {
     input.value += n;
-    resetTimer();
+
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.disabled = input.value.trim() === '';
+
+    //resetTimer();
 }
 
 function backspace() {
@@ -33,6 +37,15 @@ function loadScreen(screenName) {
     console.log("Loading:", frame.src);
 }
 
+function loadClerkScreen(screenName) {
+    const url =  screenName + ".html";
+
+    console.log("Redirecting to:", url);
+
+    // Navigate in the current window
+    window.location.href = url;
+}
+
 function closePopup() {
     document.getElementById("exceptionPopup").style.display = "none";
 }
@@ -40,12 +53,12 @@ function closePopup() {
 function submitTVA() {
     let value = document.getElementById("inputdata").value.trim();
 
-    if (value === "") {
+    if (value.length <= 5) {
         document.getElementById("exceptionPopup").style.display = "flex";
         return;
     }
 
-    loadScreen("driver");
+    loadClerkScreen("driver");
     console.log("Submitted:", value);
 }
 
@@ -56,11 +69,29 @@ function submitDriver() {
         document.getElementById("exceptionPopup").style.display = "flex";
         return;
     }
-    loadScreen("inprogress");
+    loadClerkScreen("inprogress");
     console.log("Driver Submitted:", value);
 }
 
-function openQueueDetail() {
-    loadScreen("queue-detail");
+function openClerkDetail() {
+    loadClerkScreen("clerkdetail");
     console.log("Queue detail opened");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbs = document.querySelectorAll('.thumb');
+    const viewerImg = document.querySelector('.viewer img');
+    thumbs.forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        // Remove selection from all
+        thumbs.forEach(t => t.classList.remove('selected-thumb'));
+        // Add selection to clicked
+        thumb.classList.add('selected-thumb');
+        // Update viewer image
+        const img = thumb.querySelector('img');
+        if (img) viewerImg.src = img.src;
+      });
+    });
+    // Optionally, select the first thumb by default
+    if (thumbs[0]) thumbs[0].classList.add('selected-thumb');
+  });

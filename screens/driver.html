@@ -1,7 +1,20 @@
 <head>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/kiosk.css">
     <link rel="stylesheet" href="../assets/css/popup.css">
 </head>
+
+<header>
+    <div class="logo">
+        <img src="../assets/images/KioskLogo.png">
+    </div>
+    <div class="banner">
+        <img src="../assets/images/banner.png">
+    </div>
+    <div class="company">
+        <img src="../assets/images/apmlogo.png">
+    </div>
+</header>
+
 <h1>SCAN OR ENTER DRIVER ID</h1>
 
 <div class="container">
@@ -46,27 +59,50 @@
         </div>
 
         <!-- KEYPAD -->
-        <div class="keypad">
+        <div class="keypad with-letters">
+            <!-- Numbers -->
+            <button onclick="addDigit('0')">0</button>
             <button onclick="addDigit('1')">1</button>
             <button onclick="addDigit('2')">2</button>
             <button onclick="addDigit('3')">3</button>
-
             <button onclick="addDigit('4')">4</button>
             <button onclick="addDigit('5')">5</button>
             <button onclick="addDigit('6')">6</button>
-
             <button onclick="addDigit('7')">7</button>
             <button onclick="addDigit('8')">8</button>
             <button onclick="addDigit('9')">9</button>
-
-            <button class="back" onclick="backspace()">
+            <!-- Letters -->
+            <button onclick="addDigit('A')">A</button>
+            <button onclick="addDigit('B')">B</button>
+            <button onclick="addDigit('C')">C</button>
+            <button onclick="addDigit('D')">D</button>
+            <button onclick="addDigit('E')">E</button>
+            <button onclick="addDigit('F')">F</button>
+            <button onclick="addDigit('G')">G</button>
+            <button onclick="addDigit('H')">H</button>
+            <button onclick="addDigit('I')">I</button>
+            <button onclick="addDigit('J')">J</button>
+            <button onclick="addDigit('K')">K</button>
+            <button onclick="addDigit('L')">L</button>
+            <button onclick="addDigit('M')">M</button>
+            <button onclick="addDigit('N')">N</button>
+            <button onclick="addDigit('O')">O</button>
+            <button onclick="addDigit('P')">P</button>
+            <button onclick="addDigit('Q')">Q</button>
+            <button onclick="addDigit('R')">R</button>
+            <button onclick="addDigit('S')">S</button>
+            <button onclick="addDigit('T')">T</button>
+            <button class="back btns-with-letters" onclick="backspace()">
                 <img src="../assets/images/back.svg">
             </button>
-
-            <button onclick="addDigit('0')">0</button>
-
-            <button class="clear" onclick="clearInput()">
-                <img src="../assets/images/clear.svg">
+            <button onclick="addDigit('U')">U</button>
+            <button onclick="addDigit('V')">V</button>
+            <button onclick="addDigit('W')">W</button>
+            <button onclick="addDigit('X')">X</button>
+            <button onclick="addDigit('Y')">Y</button>
+            <button onclick="addDigit('Z')">Z</button>
+            <button class="clear btns-with-letters" onclick="clearInput()">
+                <img src="../assets/images/clerkIcon.jpg">
                 CLEAR
             </button>
         </div>
@@ -75,6 +111,11 @@
 
     </div>
 </div>
+<footer class="footer-style">
+    <span id="marquee-text" class="footer-span">
+        NO SAFETY VEST NO SERVICE || DRIVER MUST REMAIN IN TRACTOR || FOR ASSISTANCE PLEASE CALL 1-833-276-9855
+    </span>
+</footer>
 <script src="../assets/js/timer.js"></script>
 <script src="../assets/js/scanner.js"></script>
 <script src="../assets/js/app.js"></script>

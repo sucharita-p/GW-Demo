@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/clerk.css">
+</head>
+<body>
+
+<div class="queue-detail-container">
+
+    <!-- HEADER -->
+    <div class="top-bar">
+      <div class="apm-logo">
+        <img 
+          src="../assets/images/apmlogo.png"
+          alt="APM Terminals"
+        >
+      </div>
+  
+      <div class="menu">
+        <span>About</span>
+        <span>Settings</span>
+        <span>Action</span>
+      </div>
+  
+      <div class="header-actions">
+        <div class="user-info">
+          Clerk: <b>Superclerk</b> &nbsp;&nbsp; Role: <b>Lane Clerk</b>
+        </div>
+        <button class="close-icon">✕</button>
+      </div>
+    </div>
+
+<!-- LANE -->
+<div class="lane-bar">
+  <div>Lane: 01 (Inbound)</div>
+  <div>Gate Pass: 00002113</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- LEFT -->
+<div class="left-panel">
+
+  <div class="form">
+    <label>Driver Card:</label><input value="57564">
+    <label>TVA Number:</label><input value="52">
+
+    <label>Truck LP:</label><input value="B7B6B6">
+    <label>Trailer LP:</label><input value="S31">
+
+    <label>Weight:</label><input value="34000">
+    <label>Visit Id:</label><input value="112">
+  </div>
+
+  <div class="mode-row">
+    <div class="mode-box red"><img src="../assets//images/importRed.png"><span>Import - RI</span></div>
+    <div class="mode-box green"><img src="../assets//images/import.png"><span>Import - DI</span></div>
+  </div>
+
+  <div class="section-title">InGate Transaction - RI</div>
+
+  <div class="form">
+    <label>Container:</label><input value="MSMU7441730">
+    <label>Size/Type:</label><input value="45G0" style="border-color:red;">
+
+    <label>Door Direction:</label><select><option>Back</option></select>
+    <label>Position:</label><select><option>Middle</option></select>
+
+    <label>Seal Presence:</label><input type="checkbox" checked>
+  </div>
+<div class="btn-error-panel">
+  <span class="">
+    <button class="btn-cancel-move">Cancel Move (F12)</button>
+  </span>
+  <div class="error-box">
+    Move Errors:<br><br>
+    - Container MSMU7441730 has ISO Code 45G0 mismatch
+  </div>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="right-panel">
+<div>
+  <div class="viewer">
+    <img src="../assets/images/RearView.jpg">
+  </div>
+  <div class="icon-grid">
+    <img src="../assets/images/left.png" alt="Left" class="icon btn-left">
+    <img src="../assets/images/top.png" alt="Up" class="icon btn-up">
+    <img src="../assets/images/down.png" alt="Down" class="icon btn-down">
+    <img src="../assets/images/right.png" alt="Right" class="icon btn-right">
+    <img src="../assets/images/zoomIn.png" alt="Zoom In" class="icon btn-zoom-in">
+    <img src="../assets/images/zoomOut.png" alt="Zoom Out" class="icon btn-zoom-out">
+    <img src="../assets/images/center.png" alt="Action" class="icon btn-action">
+  </div>
+</div>
+
+  <div class="side-panel">
+    <div class="thumb"><img src="../assets/images/RearView.jpg"><span>Back</span></div>
+    <div class="thumb"><img src="../assets/images/LeftView.jpg"><span>Left</span></div>
+    <div class="thumb"><img src="../assets/images/RighView.jpg"><span>Truck LP</span></div>
+    <div class="thumb"><img src="../assets/images/FrontView.jpg"><span>Trailer LP</span></div>
+  </div>
+
+</div>
+
+</div>
+
+<!-- ACTIONS -->
+<div class="bottom-bar">
+  <button>Submit (F1)</button>
+  <button>Cancel Visit (F2)</button>
+  <button>Open Barrier (F4)</button>
+  <button>Back (F6)</button>
+  <button>Reject (F5)</button>
+</div>
+
+<div class="footer-final">
+
+  <div class="footer-left">
+    <img src="../assets/images/ClerkIcon.ico" height="40" alt="Terminal Logo">
+    <span>Copyright © Maersk, Inc.</span>
+    <span>Login Time: 06/04/2026 04:48:46</span>
+  </div>
+  <div class="footer-right">
+    Last Refresh Time: 16:54:02
+    <img src="../assets/images/apmlogo.png" height="40" alt="APM Logo">
+  </div>
+
+</div>
+
+</head>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

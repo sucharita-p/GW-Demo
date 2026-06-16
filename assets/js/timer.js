@@ -28,7 +28,8 @@ function startTimer() {
 
             clearInput();
 
-            document.getElementById("message").innerHTML = "Session expired";
+            // document.getElementById("message").innerHTML = "Session expired";
+            loadScreen("driver");
 
             resetTimer();
             startTimer(); // restart cycle
@@ -38,3 +39,19 @@ function startTimer() {
 }
 
 startTimer();
+
+function loadScreen(screenName) {
+    let frame = document.getElementById("screenFrame");
+
+    if (!frame) {
+        let parentframe = window.parent.document.getElementById("screenFrame");
+        if (!parentframe) {
+            console.error("iframe not found");
+            return;
+        }
+        frame = parentframe;
+    }
+
+    frame.src = "screens/" + screenName + ".html";
+    console.log("Loading:", frame.src);
+}
