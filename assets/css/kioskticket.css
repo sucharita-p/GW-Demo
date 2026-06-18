@@ -1,0 +1,155 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:system-ui,sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Header Section */
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 20px;
+    background:white;
+    }
+
+.logo img{
+    width:80px;
+    }
+    
+    .banner img{
+        width: 70vw;
+        height: 10vh;
+        }
+        
+        .company{
+        font-size:32px;
+        font-weight:bold;
+        }
+
+.tagline {
+    display: block;
+    font-size: 10px;
+    color: #e65100;
+}
+
+/* Informational Green Bar */
+.instruction-bar {
+    background-color: #fcfcfc;
+    color: #282ed0;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+}
+
+/* Driver metadata panel */
+.driver-info {
+    display: flex;
+    gap: 15vh;
+    background-color: #e8edf3;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.label {
+    color: #555;
+}
+
+.pass-number {
+    color: #0d47a1;
+    font-weight: bold;
+}
+
+/* Content Grid split into 4 parts */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.quadrant {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.border-right {
+    border-right: 1px solid #d0d0d0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.section-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+/* 3 column grid inside each quadrant for metadata elements */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 6px;
+    column-gap: 15px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Bottom bold instructional text */
+.instruction-text {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #000;
+}
+
+/* Footer rules panel */
+footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    background:#d8f0f0;
+    text-align:center;
+    font-size:24px;
+    color:red;
+    font-style:italic;
+    }
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .footer-style{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 98%;
+    background: #b6ecec;
+    color: #f20000;
+  }
+  .footer-span{
+    display: inline-block; 
+    padding-left: 100%; 
+    animation: marquee 30s linear infinite;
+  }
