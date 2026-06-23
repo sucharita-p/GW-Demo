@@ -867,6 +867,7 @@ select {
   border: 1px solid #f7f7f7;
   font-size: 13px;
   width: 50vh;
+  min-height: 6vh;
 }
 
 /* LEFT BUTTONS */

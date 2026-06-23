@@ -94,7 +94,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     // Optionally, select the first thumb by default
     if (thumbs[0]) thumbs[0].classList.add('selected-thumb');
+    updateTableTextBasedOnSession();
+
+    const tabSensitiveInputs = document.querySelectorAll(".tab-sensitive");
+
+    tabSensitiveInputs.forEach(input => {
+        input.addEventListener("keydown", handleGenericTabAction);
+    });
   });
+
+  function handleGenericTabAction(event) {
+    if (event.key === "Tab") {
+        event.preventDefault(); // Stop the focus from jumping to the next box
+
+        // "event.target" tells you EXACTLY which input element was being used
+        const targetedInput = event.target;
+         targetedInput.style.border = "2px solid #04b404"; // Highlight the input field
+    }
+}
 
   // 1. Global Boolean Variables
   let isAuto = true;
@@ -137,3 +154,29 @@ document.addEventListener('DOMContentLoaded', function() {
     sessionStorage.setItem("isManualContainer", isManualContainer);
     loadClerkScreen("screens/tva");
   }
+
+function updateTableTextBasedOnSession() {
+    const textCell = document.getElementById("reasonText");
+    const inputISOCell = document.getElementById("inputISO");
+    const inputContainerCell = document.getElementById("inputContainer");
+
+    //Conditional logic to change text based on the storage value
+    if (sessionStorage.getItem("isManualISO") === "true") {
+        if (textCell)  
+            textCell.textContent = "OCR ISO Code";
+        if (!inputISOCell) return; 
+            inputISOCell.style.border = "2px solid red"; // Highlight the input field
+            inputContainerCell.style.border = "2px solid #04b404"; // Reset the other input field's border
+
+    } else if (sessionStorage.getItem("isManualContainer") === "true") {
+        if (textCell)  
+            textCell.textContent = "OCR Container";
+        if (!inputContainerCell) return; 
+            inputContainerCell.style.border = "2px solid red"; // Highlight the input field
+            inputISOCell.style.border = "2px solid #04b404"; // Reset the other input field's border
+    } else {
+        // Fallback default value if sessionStorage is empty or doesn't match
+        textCell.textContent = ""; 
+    }
+}
+
