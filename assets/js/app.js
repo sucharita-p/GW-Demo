@@ -95,3 +95,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Optionally, select the first thumb by default
     if (thumbs[0]) thumbs[0].classList.add('selected-thumb');
   });
+
+  // 1. Global Boolean Variables
+  let isAuto = true;
+  let isManualISO = false;
+  let isManualContainer = false;
+
+  // 2. Update variables instantly when dropdown selection changes
+  function updateGlobalFlags() {
+      const selection = document.getElementById("pageSelector").value;
+
+      switch (selection) {
+        case "auto":
+          isAuto = true;
+          isManualISO = false;
+          isManualContainer = false;
+          break;
+        case "manualIso":
+          isAuto = false;
+          isManualISO = true;
+          isManualContainer = false;
+          break;
+        case "manualContainer":
+          isAuto = false;
+          isManualISO = false;
+          isManualContainer = true;
+          break;
+        default:
+          isAuto = true;
+          isManualISO = false;
+          isManualContainer = false;
+          break;
+      }
+  }
+
+  // 3. Handle redirect logic when button is clicked
+  function handleRedirect() {
+    // Save to sessionStorage before redirecting (converts booleans to strings)
+    sessionStorage.setItem("isAuto", isAuto);
+    sessionStorage.setItem("isManualISO", isManualISO);
+    sessionStorage.setItem("isManualContainer", isManualContainer);
+    loadClerkScreen("screens/tva");
+  }

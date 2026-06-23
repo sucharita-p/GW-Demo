@@ -7,14 +7,29 @@
     <title>GW Demo</title>
     <link rel="stylesheet" href="assets/css/kiosk.css">
     <link rel="stylesheet" href="assets/css/popup.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
 <body>
     <script src="assets/js/app.js"></script>
     <script>
-        window.onload = function () {
-            loadClerkScreen("screens/tva");
-        };
+        // window.onload = function () {
+        //     loadClerkScreen("screens/tva");
+        // };
     </script>
+
+<div class="container">
+    <h2>Select Scenario</h2>
+    
+    <!-- Dropdown Menu -->
+    <select id="pageSelector" onchange="updateGlobalFlags()">
+        <option value="auto">Auto Scenario</option>
+        <option value="manualIso">Manual with ISO Mismatch</option>
+        <option value="manualContainer">Manual with Container Mismatch</option>
+    </select>
+
+    <!-- Redirect Button -->
+    <button onclick="handleRedirect()">Proceed</button>
+</div>
 </body>
 </html>
