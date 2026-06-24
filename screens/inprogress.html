@@ -34,8 +34,16 @@
 <script src="../assets/js/app.js"></script>
 <script>
     window.onload = function () {
-        setTimeout(function () {
-            loadClerkScreen("waitforclerk");
-        }, 1000); // 1000ms = 1 seconds
+        if(sessionStorage.getItem("isManualISO") === "true" || sessionStorage.getItem("isManualContainer") === "true" )
+        {
+            setTimeout(function () {
+                loadClerkScreen("waitforclerk");
+            }, 1000); // 1000ms = 1 seconds
+        }
+        else if(sessionStorage.getItem("isAuto") === "true"){
+            setTimeout(function () {
+                loadClerkScreen("kioskticketscreen");
+            }, 1000); // 1000ms = 1 seconds
+        }
     };
 </script>
