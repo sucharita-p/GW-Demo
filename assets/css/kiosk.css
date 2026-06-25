@@ -11,6 +11,11 @@ height:100vh;
 overflow:hidden;
 }
 
+img {
+max-width: 100%;
+height: auto;
+}
+
 header{
 display:flex;
 align-items:center;
@@ -24,8 +29,9 @@ width:80px;
 }
 
 .banner img{
-width: 75vw;
-height: 10vh;
+width: min(75vw, 1200px);
+max-height: 10vh;
+object-fit: contain;
 }
 
 .company{
@@ -55,7 +61,7 @@ height:70vh;
 }
 
 .scanner-panel img{
-    width:260px;
+    width:min(260px, 90%);
     cursor:pointer;
 }
 
