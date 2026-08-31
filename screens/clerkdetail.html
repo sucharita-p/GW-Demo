@@ -11,7 +11,7 @@
 
     <!-- HEADER -->
     <div class="top-bar">
-      <div class="apm-logo">
+      <div class="apm-logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">
         <img 
           src="../assets/images/apmlogo.png"
           alt="APM Terminals"
@@ -35,7 +35,7 @@
 <!-- LANE -->
 <div class="lane-bar">
   <div>Lane: 01 (Inbound)</div>
-  <div>Gate Pass: 00002113</div>
+  <div>Gate Pass: <span id="gatePassValue">00002113</span></div>
 </div>
 
 <!-- MAIN -->
@@ -56,30 +56,56 @@
   </div>
 
   <div class="mode-row">
-    <div class="mode-box red"><img src="../assets//images/importRed.png"><span>Import - RI</span></div>
-    <div class="mode-box green"><img src="../assets//images/import.png"><span>Import - DI</span></div>
+    <div id="mode-ri" class="mode-box red active-mode" onclick="selectMode('ri')"><img src="../assets//images/importRed.png"><span>Import - RI</span></div>
+    <div id="mode-di" class="mode-box green" onclick="selectMode('di')"><img src="../assets//images/import.png"><span>Import - DI</span></div>
   </div>
 
-  <div class="section-title">InGate Transaction - RI</div>
+  <!-- RI Move Controls -->
+  <div id="move-controls-ri">
+    <div class="section-title">InGate Transaction - RI</div>
+    <div class="form">
+      <label>Container:</label><input class="tab-sensitive" id="inputContainer" value="ESDU3322743" oninput="validateRIForm()">
+      <label>Size/Type:</label><input class="tab-sensitive" id="inputISO" value="2G1" oninput="validateRIForm()">
 
-  <div class="form">
-    <label>Container:</label><input class="tab-sensitive" id="inputContainer" value="MSMU7441730">
-    <label>Size/Type:</label><input class="tab-sensitive" id="inputISO" value="45G0">
+      <label>Door Direction:</label><select><option>Back</option></select>
+      <label>Position:</label><select><option>Middle</option></select>
 
-    <label>Door Direction:</label><select><option>Back</option></select>
-    <label>Position:</label><select><option>Middle</option></select>
-
-    <label>Seal Presence:</label><input type="checkbox" checked>
+      <label>Seal Presence:</label><input type="checkbox" checked>
+    </div>
+    <div class="btn-error-panel">
+      <span class="">
+        <button class="btn-cancel-move">Cancel Move (F12)</button>
+      </span>
+      <div class="error-box" id="error-box-ri">
+        <button class="btn-clear-error" onclick="clearErrors('ri')" title="Clear errors">✕</button>
+        Move Errors:<br><br>
+        - Container MSMU7441730 has ISO Code 2G1 mismatch
+      </div>
+    </div>
   </div>
-<div class="btn-error-panel">
-  <span class="">
-    <button class="btn-cancel-move">Cancel Move (F12)</button>
-  </span>
-  <div class="error-box">
-    Move Errors:<br><br>
-    - Container MSMU7441730 has ISO Code 45G0 mismatch
+
+  <!-- DI Move Controls -->
+  <div id="move-controls-di" style="display:none;">
+    <div class="section-title">InGate Transaction - DI</div>
+    <div class="form">
+      <label>Container:</label><input class="tab-sensitive" value="TCKU3456789">
+      <label>Size/Type:</label><input class="tab-sensitive" value="44G0">
+
+      <label>Door Direction:</label><select><option>Back</option><option>Front</option></select>
+      <label>Position:</label><select><option>Middle</option><option>Left</option><option>Right</option></select>
+
+      <label>Delivery Order:</label><input value="">
+      <label>Seal Presence:</label><input type="checkbox">
+    </div>
+    <div class="btn-error-panel">
+      <span class="">
+        <button class="btn-cancel-move">Cancel Move (F12)</button>
+      </span>
+      <div class="error-box">
+        Move Errors:<br><br>
+      </div>
+    </div>
   </div>
-</div>
 
 </div>
 
@@ -113,11 +139,11 @@
 
 <!-- ACTIONS -->
 <div class="bottom-bar">
-  <button>Submit (F1)</button>
-  <button>Cancel Visit (F2)</button>
-  <button>Open Barrier (F4)</button>
-  <button>Back (F6)</button>
-  <button>Reject (F5)</button>
+  <button id="submitBtn" onclick="submitClerkDetail()">Submit (F1)</button>
+  <button onclick="forceClerkNavigate()">Cancel Visit (F2)</button>
+  <button onclick="forceClerkNavigate()">Open Barrier (F4)</button>
+  <button onclick="backToQueue()">Back (F6)</button>
+  <button onclick="forceClerkNavigate()">Reject (F5)</button>
 </div>
 
 <div class="footer-final">

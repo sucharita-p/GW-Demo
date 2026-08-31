@@ -806,6 +806,13 @@ body {
   display: grid;
   grid-template-columns: 21% 24% 21% 24%;
   gap: 10px 20px;
+  align-items: center;
+}
+
+.form input[type="checkbox"] {
+  width: auto;
+  justify-self: start;
+  margin: 0;
 }
 
 /* FOr Transaction Details Page */
@@ -834,8 +841,11 @@ select {
   align-items: center;
 }
 
-.mode-box.red { border: 5px solid red;}
-.mode-box.green { border-color:#4caf50; }
+.mode-box.red { border: 3px solid red;}
+.mode-box.green { border: 3px solid #4caf50; }
+.mode-box.active-mode { opacity: 1; }
+.mode-box:not(.active-mode) { cursor: pointer; }
+.mode-box.mode-box-ready { border-color: #4caf50 !important; }
 
 .mode-box img {
   height: 4vh;
@@ -868,6 +878,22 @@ select {
   font-size: 13px;
   width: 50vh;
   min-height: 6vh;
+  position: relative;
+}
+
+.error-box .btn-clear-error {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #d32f2f;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1;
+  min-width: unset !important;
 }
 
 /* LEFT BUTTONS */
@@ -898,12 +924,16 @@ select {
   border: 2px solid #6cd6f9;
   min-height: 72vh;
   /* max-height: 72vh; */
+  overflow: hidden;
 }
 
 .viewer img {
   width:100%;
   height:72vh;
   object-fit: contain;
+  transform-origin: center center;
+  transition: transform 0.15s ease;
+  cursor: grab;
 }
 
 /* SIDE THUMBNAILS */
@@ -946,6 +976,7 @@ select {
   align-items: center;
   gap: 9px;
   margin-left: 2vh;
+  z-index: 100;
 }
 
 .btn-error-panel button,
@@ -956,6 +987,18 @@ select {
   font-weight:600;
   border-radius: 5px;
   min-width: 16vh;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#submitBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+#submitBtn.btn-submit-ready {
+  background: #4caf50;
+  color: #fff;
 }
 
 /* ===== FOOTER ===== */

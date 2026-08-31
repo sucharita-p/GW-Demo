@@ -11,12 +11,12 @@
 <div class="queue-container">
   
   <div class="top-bar">
-    <div class="apm-logo">
-      <img 
-        src="../assets/images/apmlogo.png"
-        alt="APM Terminals"
-      >
-    </div>
+      <div class="apm-logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">
+        <img 
+          src="../assets/images/apmlogo.png"
+          alt="APM Terminals"
+        >
+      </div>
 
     <div class="menu">
       <span>About</span>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="queue-body">
-    <div class="table-header">
+    <div class="table-header" id="waitingCount">
       Transaction(s) waiting for clerk : 1
     </div>
 
@@ -57,7 +57,7 @@
 <th>Status</th>
 </tr>
 
-<tr class="clickable" ondblclick="openClerkDetail()" title="Double click to open details">
+<tr id="row-00002113" class="clickable" ondblclick="openClerkDetail()" title="Double click to open details">
 <td>In-01</td>
 <td>B7B6B6</td>
 <td>00002113</td>
@@ -66,11 +66,11 @@
 <td></td>
 <td>34000</td>
 <td>03/06/26 4:53 PM</td>
-<td>00:00:06</td>
+<td id="duration-00002113">00:00:00</td>
 <td></td>
 <td></td>
 <td id="reasonText" style="color:#d48f00;font-weight:bold;">OCR ISO Code</td>
-<td style="color:#e53935;font-weight:bold;">Waiting For Clerk</td>
+<td id="status-00002113" style="color:#e53935;font-weight:bold;">Waiting For Clerk</td>
 </tr>
 
 <tr>
@@ -96,7 +96,7 @@
     <button class="next-btn" onclick="openClerkDetail()">NEXT (Enter)</button>
   </div>
 
-  <button class="close-btn">CLOSE (F10)</button>
+  <button class="close-btn" onclick="closeQueueScreen()">CLOSE (F10)</button>
 
   <!-- FOOTER -->
   <div class="footer-final">
